@@ -1,0 +1,79 @@
+.footer {
+    padding: rem-calc(190 0 20 0);
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        height: rem-calc(700);
+
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='601' height='653' viewBox='0 0 601 653' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M98.6904 652.997C165.8 652.997 197.381 619.442 197.381 549.372H98.6904V652.997Z' fill='%230252C1'/%3E%3Cpath d='M98.6901 652.999C31.5808 652.999 0 619.445 0 549.375H98.6901V652.999Z' fill='%230252C1'/%3E%3Cpath d='M197.38 -72.3752H0V549.373H197.38V-72.3752Z' fill='%230252C1'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M96.6904 549.373V-72.3752H100.69V549.373H96.6904Z' fill='white'/%3E%3Cpath d='M300.017 652.997C367.127 652.997 398.707 619.442 398.707 549.372H300.017V652.997Z' fill='%230252C1'/%3E%3Cpath d='M300.018 652.999C232.909 652.999 201.328 619.445 201.328 549.375H300.018V652.999Z' fill='%230252C1'/%3E%3Cpath d='M398.708 -72.3752H201.328V549.373H398.708V-72.3752Z' fill='%230252C1'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M298.017 549.373V-72.3752H302.017V549.373H298.017Z' fill='white'/%3E%3Cpath d='M501.345 652.997C568.454 652.997 600.035 619.442 600.035 549.372H501.345V652.997Z' fill='%230252C1'/%3E%3Cpath d='M501.345 652.999C434.235 652.999 402.655 619.445 402.655 549.375H501.345V652.999Z' fill='%230252C1'/%3E%3Cpath d='M600.036 -72.3752H402.656V549.373H600.036V-72.3752Z' fill='%230252C1'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M499.347 549.373V-72.3752H503.347V549.373H499.347Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-position: top 50%;
+        background-repeat: repeat-x;
+    }
+
+    .headline {
+        margin-bottom: rem-calc(90);
+    }
+
+    .lead {
+        margin-bottom: rem-calc(25);
+
+        @include breakpoint(medium) {
+            font-size: rem-calc(35);
+        }
+    }
+
+    .menu--info {
+        font-size: rem-calc(21);
+        line-height: rem-calc(32);
+
+        li {
+          
+            strong {
+                display: block;
+            }
+
+        }
+    }
+    .menu--info{
+        li{
+            margin-bottom: rem-calc(30);
+
+        }
+    }
+
+    &__logo {
+        font-size: rem-calc(36);
+        color: $primary-color;
+        text-transform: uppercase;
+        font-family: $header-font-family;
+
+    }
+
+    &__row {
+        margin-top: rem-calc(70);
+    }
+
+    &__copyright {
+        color: $dark-gray;
+
+        a {
+            color: $dark-gray;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .mt-lg{
+        @include breakpoint(medium) {
+            margin-top: rem-calc(165);
+        }
+    }
+}

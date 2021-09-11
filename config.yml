@@ -22,6 +22,9 @@ PATHS:
   sass:
     - "node_modules/foundation-sites/scss"
     - "node_modules/motion-ui/src"
+    - "node_modules/swiper"
+    - "node_modules/@fancyapps/fancybox/dist"
+    - "node_modules/@fancyapps/ui/dist"
   # Paths to JavaScript entry points for webpack to bundle modules
   entries:
     - "src/assets/js/app.js"

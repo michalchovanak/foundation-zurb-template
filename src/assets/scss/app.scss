@@ -4,6 +4,8 @@
 @import 'foundation';
 @import 'motion-ui';
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap');
+
 // Global styles
 @include foundation-global-styles;
 @include foundation-forms;
@@ -62,3 +64,27 @@
 // Motion UI
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+//workaround for fancyapps bug
+@function max($numbers...) {
+    @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+    @return m#{i}n(#{$numbers});
+}
+
+@import "fancybox";
+
+
+@import 'swiper';
+
+@import 'global/_main';
+@import 'global/_typography';
+@import 'global/_top-bar';
+@import 'global/_footer';
+
+@import 'components/card';
+@import 'components/button';
+@import 'components/helpers';
+@import 'components/swiper';

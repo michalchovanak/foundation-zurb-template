@@ -1,0 +1,64 @@
+.button {
+    font-size: rem-calc(26);
+    text-transform: uppercase;
+    background-color: transparent;
+    padding: rem-calc(15 0);
+    color: $primary-color;
+
+    &:hover {
+        background-color: transparent;
+        color: $primary-color;
+    }
+
+    &.white{
+        color: $white;
+
+        &.has-arrow:after {
+            
+            background-image: url("data:image/svg+xml,%3Csvg width='50' height='46' viewBox='0 0 50 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 21L29 0H23L44 21V23H50V21Z' fill='white'/%3E%3Cpath d='M50 25L29 46H23L44 25V23H50V25Z' fill='white'/%3E%3Cpath d='M0 25H48V21H0' fill='white'/%3E%3C/svg%3E%0A");
+        }
+    }
+
+    &.has-arrow {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            text-decoration: underline;
+
+            &:after {
+                transform: translateX(6px);
+            }
+        }
+
+        &:after {
+            content: '';
+
+            width: rem-calc(50);
+            height: rem-calc(50);
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-position: center;
+            margin-left: rem-calc(15);
+            background-image: url("data:image/svg+xml,%3Csvg width='50' height='46' viewBox='0 0 50 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 21L29 0H23L44 21V23H50V21Z' fill='%230252C1'/%3E%3Cpath d='M50 25L29 46H23L44 25V23H50V25Z' fill='%230252C1'/%3E%3Cpath d='M0 25H48V21H0' fill='%230252C1'/%3E%3C/svg%3E%0A");
+
+            transition: transform $global-transition;
+        }
+    }
+
+    &--video {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='40' viewBox='0 0 30 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 20V18L4 0H0V20H30Z' fill='white'/%3E%3Cpath d='M30 20V22L4 40H0V20H30Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-position: center;
+        background-repeat: no-repeat;
+        width: rem-calc(120);
+        height: rem-calc(120);
+        border: 2px solid $white;
+        border-radius: 50%;
+        transition: transform $global-transition;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}

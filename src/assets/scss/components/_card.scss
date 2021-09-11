@@ -1,0 +1,55 @@
+.card {
+    flex: 0 0 auto;
+    border: 0;
+
+    &__date {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        list-style: none;
+        margin: 0;
+        width: 100%;
+
+
+        li {
+            font-size: rem-calc(19);
+            line-height: rem-calc(28);
+            &:nth-child(2) {
+                @extend .stat;
+            }
+        }
+
+    }
+
+    &--timeline {
+        background-color: #F8F7F6;
+        padding: clamp(25px, 2.8vw, 40px) clamp(25px, 5vw, 40px);
+
+        display: flex;
+        flex-flow: column;
+        min-height: rem-calc(484);
+
+        .card__footer {
+            margin-top: auto;
+        }
+    }
+
+    &--team{
+        border-bottom: 2px solid $black;
+        .card__section{
+            .headline{
+                font-family: $body-font-family;
+                font-weight: 600;
+                text-transform: none;
+                font-size: clamp(28px, 2.8vw, 41px);
+                line-height: 104%;
+                margin: rem-calc(25 0);
+            }
+            p{
+                font-size: rem-calc(17);
+                line-height: 124%;
+                min-height: rem-calc(55);
+            }
+        }
+    }
+}

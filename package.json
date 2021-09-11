@@ -10,9 +10,12 @@
   "author": "ZURB <foundation@zurb.com>",
   "license": "MIT",
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "@fancyapps/ui": "^4.0.0-beta.4",
     "foundation-sites": "^6.6.0",
     "jquery": "^3.2.1",
     "motion-ui": "^2.0.3",
+    "swiper": "^6.0.2",
     "what-input": "^5.1.2"
   },
   "devDependencies": {

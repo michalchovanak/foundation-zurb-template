@@ -13,5 +13,60 @@ require('foundation-sites');
 // the line below
 //import './lib/foundation-explicit-pieces';
 
+import { Fancybox } from "@fancyapps/ui";
+
+import {
+    Swiper,
+    Navigation,
+    Pagination,
+    Scrollbar,
+    A11y
+  } from "swiper";
+  Swiper.use([Navigation, Pagination, Scrollbar, A11y]);
+    
+
+
 
 $(document).foundation();
+
+
+const swiper = new Swiper(".swiper--timeline", {
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: 30,
+    breakpoints: {
+      640: {
+        slidesPerView: "auto",
+        centeredSlides: false,
+      }
+    },
+    navigation: {
+      nextEl: '.swiper-controls--timeline .swiper-button--next',
+      prevEl: '.swiper-controls--timeline .swiper-button--prev',
+    },
+    pagination: {
+        el: '.swiper-pagination--timeline',
+        clickable: true,
+      }
+  });
+
+
+const swiperTeam = new Swiper(".swiper--team", {
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: 30,
+    breakpoints: {
+      640: {
+        slidesPerView: "auto",
+        centeredSlides: false,
+      }
+    },
+    navigation: {
+      nextEl: '.swiper-controls--team .swiper-button--next',
+      prevEl: '.swiper-controls--team .swiper-button--prev',
+    },
+    pagination: {
+        el: '.swiper-pagination--team',
+        clickable: true,
+      }
+  });

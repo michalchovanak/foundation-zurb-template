@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'inobat_sansregular';
+    src: url('../font/inobatsans-regular-webfont.woff2') format('woff2'),
+        url('../font/inobatsans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.lead {
+    font-size: clamp(26px, 2.15vw, 31px);
+    line-height: 129%;
+
+    &.lead--sm{
+        font-size: clamp(18px, 1.6vw, 23px);
+    }
+    &.lead--lg{
+        font-size: clamp(26px, 2.15vw, 35px);
+    }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    text-transform: uppercase;
+}
+
+.f-ibmplex{
+    font-family: $body-font-family;
+    text-transform: none;
+}
+
+.menu--social{
+    margin: 0;
+    li{
+        margin-right: rem-calc(18);
+        a{
+            display: block;
+            border-radius: 50%;
+            border: 2px solid $primary-color;
+            width: rem-calc(72);
+            height: rem-calc(72);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color $global-transition;
+            &:hover{
+                background-color: rgba($primary-color, 0.1);
+            }
+        }
+
+    }
+}
+
+.menu--footer{
+    font-size: rem-calc(19);
+    li {
+        margin-bottom: 0;
+        &:last-child{
+            a{
+                padding-right: 0;
+            }
+        }
+        a{
+            color: $black;
+            transition: color $global-transition;
+            &:hover{
+                color: $primary-color;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+hr{
+    border-color: $black;
+    &.full-w{
+        max-width: none;
+    }
+}

@@ -2,18 +2,61 @@
 
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
-    <link rel="stylesheet" href="{{root}}assets/css/app.css">
-  </head>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inobat Auto</title>
+  <link rel="stylesheet" href="{{root}}assets/css/app.css">
+</head>
+
 <body>
 
-{{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
-{{> body}}
+  <div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="overlap">
+    <div class="off-canvas__header">
+      <button class="close-button" aria-label="Close menu" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="off-canvas__content">
+      {{>main-menu}}
+    </div>
 
-<script src="{{root}}assets/js/app.js"></script>
+
+
+  </div>
+
+  <div id="main" role="main" class="main off-canvas-content" data-off-canvas-content>
+    <div class="top-bar-container" data-sticky-container>
+      <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
+
+        <div id="top-bar" class="top-bar" data-topbar>
+          <div class="top-bar-left ">
+            <a href="/" id="top-bar-logo" class="top-bar-logo" title="Domov">Inobat auto</a>
+          </div>
+
+          <div class="top-bar-right show-for-large">
+            {{>main-menu}}
+          </div>
+          <div class="top-bar-right hide-for-large">
+            <button class="top-bar-toggle" type="button" data-toggle="offCanvas">
+              <span class="hamburger"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+  {{> body}}
+
+  {{>footer}}
+
+  <script src="{{root}}assets/js/app.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,88 @@
+.hero{
+    background-color: #012686;
+    color: $white;
+    position: relative;
+    overflow: hidden;
+    
+    @include breakpoint(medium) {
+        padding: rem-calc(160 0 70 0);
+    }
+    .button{
+        margin-top: auto;
+        display: inline-block;
+    }
+
+    &__content{
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-flow: row wrap;
+        min-height: rem-calc(600);
+    }
+
+    &__video{
+        position: absolute;
+        right: 0;
+        left: 0;
+        top:0;
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        z-index: 1;
+    }
+
+    &--page{
+        .hero__content{
+            min-height: 40vh;
+        }
+        .headline{
+            margin-top: auto;
+        }
+    }
+}
+
+.section{
+    padding: rem-calc(100 0);
+    overflow: hidden;
+
+    &--pb0{
+        padding-bottom: 0;
+    }
+
+    &__title{
+        margin-bottom: rem-calc(90);
+    }
+
+    .content{
+        &.half{
+            max-width: clamp(500px, 42vw, 608px);
+           
+        }
+    }
+}
+
+.divided{
+    &__block{
+        padding: clamp(60px, 14vw, 280px) clamp(60px, 8vw, 290px);
+       
+        &.centered{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &--sm{
+        .divided__block{
+            padding: clamp(30px, 6.25vw, 280px) clamp(30px, 15.5vw, 280px) clamp(30px, 6.25vw, 280px) clamp(30px, 6.25vw, 280px);
+            .headline{
+                margin-bottom: rem-calc(35);
+            }
+            p{
+                font-size: rem-calc(21);
+                line-height: 138%;
+            }
+        }
+    }
+}

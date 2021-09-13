@@ -27,7 +27,10 @@
 
         display: flex;
         flex-flow: column;
-        min-height: rem-calc(484);
+        min-height: rem-calc(260); 
+        @include breakpoint(medium) {
+            min-height: rem-calc(484);    
+        } 
 
         .card__footer {
             margin-top: auto;
@@ -35,13 +38,13 @@
     }
 
     &--team{
-        border-bottom: 2px solid $black;
+       
         .card__section{
             .headline{
                 font-family: $body-font-family;
                 font-weight: 600;
                 text-transform: none;
-                font-size: clamp(28px, 2.8vw, 41px);
+                font-size: clamp(24px, 2.8vw, 41px);
                 line-height: 104%;
                 margin: rem-calc(25 0);
             }

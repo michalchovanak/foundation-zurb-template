@@ -8,14 +8,16 @@
 }
 
 .lead {
-    font-size: clamp(26px, 2.15vw, 31px);
+    font-size: clamp(24px, 2.15vw, 31px);
     line-height: 129%;
 
-    &.lead--sm{
-        font-size: clamp(18px, 1.6vw, 23px);
+
+    &.lead--sm {
+        font-size: clamp(16px, 1.6vw, 23px);
     }
-    &.lead--lg{
-        font-size: clamp(26px, 2.15vw, 35px);
+
+    &.lead--lg {
+        font-size: clamp(22px, 2.15vw, 35px);
     }
 }
 
@@ -28,26 +30,39 @@ h5 {
     text-transform: uppercase;
 }
 
-.f-ibmplex{
+h1 {
+    letter-spacing: -5px;
+}
+
+.f-ibmplex {
     font-family: $body-font-family;
     text-transform: none;
 }
 
-.menu--social{
+.menu--social {
     margin: 0;
-    li{
+
+    li {
         margin-right: rem-calc(18);
-        a{
+
+        a {
             display: block;
             border-radius: 50%;
             border: 2px solid $primary-color;
-            width: rem-calc(72);
-            height: rem-calc(72);
+            width: rem-calc(56);
+            height: rem-calc(56);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: background-color $global-transition;
-            &:hover{
+
+            @include breakpoint(medium) {
+
+                width: rem-calc(72);
+                height: rem-calc(72);
+            }
+
+            &:hover {
                 background-color: rgba($primary-color, 0.1);
             }
         }
@@ -55,19 +70,37 @@ h5 {
     }
 }
 
-.menu--footer{
-    font-size: rem-calc(19);
+.menu--footer {
+    font-size: rem-calc(18);
+
+    @include breakpoint(medium) {
+        font-size: rem-calc(19);
+    }
+
+    @include breakpoint(small only) {
+        display: block;
+        margin-top: rem-calc(30);
+
+    }
+
     li {
         margin-bottom: 0;
-        &:last-child{
-            a{
+
+        &:last-child {
+            a {
                 padding-right: 0;
             }
         }
-        a{
+
+        a {
             color: $black;
             transition: color $global-transition;
-            &:hover{
+
+            @include breakpoint(small only) {
+                padding-left: 0;
+            }
+
+            &:hover {
                 color: $primary-color;
                 text-decoration: underline;
             }
@@ -75,9 +108,10 @@ h5 {
     }
 }
 
-hr{
+hr {
     border-color: $black;
-    &.full-w{
+
+    &.full-w {
         max-width: none;
     }
 }

@@ -8,10 +8,10 @@ $top-bar-small-offset: 80px;
     background: transparent;
     margin: 0 auto;
     padding: 0 rem-calc(15);
-    max-width: rem-calc(1170);
+    
     position: absolute;
     background: transparent;
-    transition: box-shadow $global-transition;
+    transition: background-color $global-transition;
 
     width: 100%;
     left: 0;
@@ -20,18 +20,25 @@ $top-bar-small-offset: 80px;
 
     @include breakpoint(large) {
         height: rem-calc(90);
-   
         padding-left: 0;
-
     }
 
     @include breakpoint(medium down) {
-        padding-left: rem-calc(0);
-        padding-right: rem-calc(0);
+        padding-left: rem-calc(25);
+        padding-right: rem-calc(25);
     }
 
     ul {
         background: transparent;
+    }
+
+    &__content{
+        max-width: rem-calc(1170);
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 100%;
     }
 
     .menu {
@@ -48,8 +55,7 @@ $top-bar-small-offset: 80px;
             color: $white;
 
             &:hover {
-                opacity: 1;
-                color: rgba(255, 255, 255, 1);
+                text-decoration: underline;
             }
         }
 
@@ -123,6 +129,9 @@ $top-bar-small-offset: 80px;
     color: $white;
     text-transform: uppercase;
     font-family: $header-font-family;
+    &:hover{
+        color: $white;
+    }
 }
 
 
@@ -132,14 +141,21 @@ $top-bar-small-offset: 80px;
     left: 0;
     right: 0;
     background: transparent;
-    border-bottom: 1px solid rgba($white, 0.5);
+    border-bottom: 1px solid rgba($white, 0.2);
     height: rem-calc(90)!important;
     background-color: transparent;
+
+    @include breakpoint(small only) {
+        height: $top-bar-height-mobile!important;
+    }
     
 
     .is-stuck {
         position: fixed;
         border-color: transparent;
+        .top-bar{
+            background-color: $primary-color;
+        }
         
     }
 }
@@ -177,7 +193,7 @@ $top-bar-small-offset: 80px;
 .off-canvas {
 
     margin-bottom: rem-calc(140);
-    font-family: $header-font-family;
+
     overflow: hidden;
 
     &.is-transition-overlap {
@@ -204,7 +220,7 @@ $top-bar-small-offset: 80px;
 
         a:not(.button) {
 
-            color: $black;
+            color: $white;
             outline: none;
             padding: rem-calc(14 0);
 
@@ -236,10 +252,9 @@ $top-bar-small-offset: 80px;
     .close-button{
         width: rem-calc(40);
         height: rem-calc(40);
-        border: 1px solid $light-gray;
         border-radius: 50%;
         top: 15px;
-        font-size: rem-calc(22);
+        font-size: rem-calc(35);
         line-height: 22px;
     }
 

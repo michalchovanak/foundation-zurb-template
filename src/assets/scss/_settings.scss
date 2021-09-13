@@ -67,7 +67,7 @@
 
 $global-transition: 0.25s ease;
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(1258);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #0252C1,
@@ -149,9 +149,9 @@ $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
-    'h1': ('font-size': 24),
-    'h2': ('font-size': 20),
-    'h3': ('font-size': 19),
+    'h1': ('font-size': 42, 'line-height': 100%),
+    'h2': ('font-size': 38, 'line-height': 100%),
+    'h3': ('font-size': 30, 'line-height': 120%),
     'h4': ('font-size': 18),
     'h5': ('font-size': 17),
     'h6': ('font-size': 16),
@@ -159,7 +159,7 @@ $header-styles: (
   medium: (
     'h1': ('font-size': 87, 'line-height': 100%),
     'h2': ('font-size': 71, 'line-height': 100%),
-    'h3': ('font-size': 31),
+    'h3': ('font-size': 51, 'line-height': 120%),
     'h4': ('font-size': 25),
     'h5': ('font-size': 20),
     'h6': ('font-size': 16),
@@ -524,7 +524,7 @@ $offcanvas-sizes: (
 $offcanvas-vertical-sizes: (
   small: 250px,
 );
-$offcanvas-background: $light-gray;
+$offcanvas-background: $black;
 $offcanvas-shadow: 0 0 10px rgba($black, 0.7);
 $offcanvas-inner-shadow-size: 20px;
 $offcanvas-inner-shadow-color: rgba($black, 0.25);
@@ -535,7 +535,7 @@ $offcanvas-reveal-zindex: 12;
 $offcanvas-transition-length: 0.5s;
 $offcanvas-transition-timing: ease;
 $offcanvas-fixed-reveal: true;
-$offcanvas-exit-background: rgba($white, 0.25);
+$offcanvas-exit-background: rgba($black, 0.75);
 $maincontent-class: 'off-canvas-content';
 
 // 26. Orbit
@@ -576,9 +576,9 @@ $pagination-arrow-next: '\00BB';
 // 28. Progress Bar
 // ----------------
 
-$progress-height: 1rem;
-$progress-background: $medium-gray;
-$progress-margin-bottom: $global-margin;
+$progress-height: 13px;
+$progress-background: transparent;
+$progress-margin-bottom: 13px;
 $progress-meter-background: $primary-color;
 $progress-radius: $global-radius;
 

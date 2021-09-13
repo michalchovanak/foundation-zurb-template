@@ -1,9 +1,12 @@
 .button {
-    font-size: rem-calc(26);
+    font-size: rem-calc(22);
     text-transform: uppercase;
     background-color: transparent;
     padding: rem-calc(15 0);
     color: $primary-color;
+    @include breakpoint(medium) {
+        font-size: rem-calc(26);
+    }
 
     &:hover {
         background-color: transparent;
@@ -44,6 +47,9 @@
             background-image: url("data:image/svg+xml,%3Csvg width='50' height='46' viewBox='0 0 50 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 21L29 0H23L44 21V23H50V21Z' fill='%230252C1'/%3E%3Cpath d='M50 25L29 46H23L44 25V23H50V25Z' fill='%230252C1'/%3E%3Cpath d='M0 25H48V21H0' fill='%230252C1'/%3E%3C/svg%3E%0A");
 
             transition: transform $global-transition;
+            @include breakpoint(small only) {
+                background-size: 65%;
+            }
         }
     }
 

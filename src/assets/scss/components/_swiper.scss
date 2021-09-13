@@ -3,15 +3,23 @@
     overflow: visible;
 }
 
+
 .swiper--timeline {
     position: relative;
-    
-    .swiper-slide{
-        max-width: rem-calc(404);
-        &:nth-child(2){
+
+    .swiper-slide {
+        max-width: 75%;
+        transition: background-color $global-transition;
+
+        @include breakpoint(medium) {
+            max-width: rem-calc(404);
+        }
+
+        &.swiper-slide-next {
             background-color: #E8E7E6;
         }
-        &:nth-child(3){
+
+        &.swiper-slide-next+.swiper-slide {
             background-color: #CCCBCA;
         }
     }
@@ -20,7 +28,29 @@
 
 .swiper--team {
     .swiper-slide {
-       max-width: rem-calc(300);
+        max-width: 75%;
+        border-bottom: 2px solid $black;
+
+        @include breakpoint(medium) {
+            max-width: rem-calc(300);
+        }
+    }
+}
+
+.swiper--batteries{
+    .swiper-slide{
+        padding: rem-calc(25 0);
+        @include breakpoint(small only) {
+            margin: rem-calc(25 0);
+            height: rem-calc(300);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                max-width: 100%;
+                
+            }
+        }
     }
 }
 
@@ -59,6 +89,19 @@
     }
 }
 
+.swiper--batteries {
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.swiper--batteries-text {
+    overflow: hidden;
+    width: 50vw;
+}
+
 .swiper-controls {
     background-color: transparent;
 
@@ -69,19 +112,25 @@
 .swiper-button {
     display: block;
     background-color: transparent;
-    width: rem-calc(76);
-    height: rem-calc(76);
+    width: rem-calc(56);
+    height: rem-calc(56);
     border: 2px solid $primary-color;
     border-radius: 50%;
     background-image: url("data:image/svg+xml,%3Csvg width='22' height='36' viewBox='0 0 22 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 16L6 0H0L18 18V20H22V16Z' fill='%230252C1'/%3E%3Cpath d='M22 20L6 36H0L18 18V16H22V20Z' fill='%230252C1'/%3E%3C/svg%3E%0A");
-
+    background-size: 35%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto;
     transition: all $global-transition;
     outline: none;
     cursor: pointer;
     margin-left: rem-calc(12);
+
+    @include breakpoint(medium) {
+        background-size: auto;
+        width: rem-calc(76);
+        height: rem-calc(76);
+
+    }
 
 
     &--prev {
@@ -89,13 +138,26 @@
     }
 
     &.swiper-button-disabled {
-        opacity: 1;
+        opacity: 0.5;
         background-color: transparent;
+
+        &:hover {
+            opacity: 0.5;
+        }
     }
 
     &:hover {
         opacity: 1;
         background-color: rgba($primary-color, 0.2);
+    }
+
+    &.white {
+        border-color: $white;
+        background-image: url("data:image/svg+xml,%3Csvg width='22' height='36' viewBox='0 0 22 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 16L6 0H0L18 18V20H22V16Z' fill='white'/%3E%3Cpath d='M22 20L6 36H0L18 18V16H22V20Z' fill='white'/%3E%3C/svg%3E%0A");
+
+        &.swiper-button--prev {
+            background-image: url("data:image/svg+xml,%3Csvg width='22' height='36' viewBox='0 0 22 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 16L16 0H22L4 18V20H0V16Z' fill='white'/%3E%3Cpath d='M0 20L16 36H22L4 18V16H0V20Z' fill='white'/%3E%3C/svg%3E%0A");
+        }
     }
 }
 
@@ -117,21 +179,37 @@
 
         &.swiper-pagination-bullet-active {
             background-color: $primary-color;
-            transform: scale(4);
+            transform: scale(2);
+
+            @include breakpoint(medium) {
+                transform: scale(4);
+            }
         }
     }
 
-    &.wide{
+    &.wide {
         justify-content: space-between;
     }
 }
 
-.swiper-footer{
+.swiper-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: rem-calc(65);
-    .swiper-pagination{
+    margin-top: rem-calc(40);
+    @include breakpoint(medium) {
+        margin-top: rem-calc(65);
+        
+    }
+    .button{
+        margin-bottom: 0;
+    }
+
+    .lead--sm{
+        margin-bottom: 0;
+    }
+
+    .swiper-pagination {
         width: 80%;
     }
 }

@@ -1,30 +1,36 @@
-.hero{
-    background-color: #012686;
+.hero {
+    background-color: #020885;
     color: $white;
     position: relative;
     overflow: hidden;
-    
+    padding: rem-calc(160 0 0 0);
+
     @include breakpoint(medium) {
         padding: rem-calc(160 0 70 0);
     }
-    .button{
+
+    .button {
         margin-top: auto;
         display: inline-block;
     }
 
-    &__content{
+    &__content {
         position: relative;
         z-index: 2;
         display: flex;
         flex-flow: row wrap;
-        min-height: rem-calc(600);
+        min-height: 60vh;
+
+        @include breakpoint(medium) {
+            min-height: rem-calc(600);
+        }
     }
 
-    &__video{
+    &__video {
         position: absolute;
         right: 0;
         left: 0;
-        top:0;
+        top: 0;
         min-width: 100%;
         max-width: 100%;
         min-height: 100%;
@@ -32,57 +38,164 @@
         z-index: 1;
     }
 
-    &--page{
-        .hero__content{
+    &--page {
+        .hero__content {
             min-height: 40vh;
         }
-        .headline{
+
+        .headline {
             margin-top: auto;
         }
     }
 }
 
-.section{
-    padding: rem-calc(100 0);
+.section {
+    padding: rem-calc(60 0);
     overflow: hidden;
 
-    &--pb0{
+    @include breakpoint(medium) {
+        padding: rem-calc(100 0);
+    }
+
+    &--pb0 {
         padding-bottom: 0;
     }
 
-    &__title{
-        margin-bottom: rem-calc(90);
+    &--pt0 {
+        padding-top: 0;
     }
 
-    .content{
-        &.half{
+    &__title {
+        margin-bottom: rem-calc(40);
+
+        @include breakpoint(medium) {
+            margin-bottom: rem-calc(90);
+        }
+
+        .headline{
+            @include breakpoint(small only) {
+                margin-bottom: rem-calc(30);
+            }
+        }
+    }
+
+    .content {
+        &.half {
             max-width: clamp(500px, 42vw, 608px);
-           
+
         }
     }
 }
 
-.divided{
-    &__block{
-        padding: clamp(60px, 14vw, 280px) clamp(60px, 8vw, 290px);
-       
-        &.centered{
+.divided {
+    &__block {
+        padding: rem-calc(25);
+
+        @include breakpoint(medium) {
+            padding: clamp(60px, 14vw, 280px) clamp(60px, 8vw, 290px);
+        }
+
+        &.centered {
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
+        &.bg {
+            @include breakpoint(small only) {
+                min-height: rem-calc(250);
+            }
+        }
     }
 
-    &--sm{
-        .divided__block{
+    &--sm {
+        .divided__block {
             padding: clamp(30px, 6.25vw, 280px) clamp(30px, 15.5vw, 280px) clamp(30px, 6.25vw, 280px) clamp(30px, 6.25vw, 280px);
-            .headline{
+
+            .headline {
                 margin-bottom: rem-calc(35);
             }
-            p{
+
+            p {
                 font-size: rem-calc(21);
                 line-height: 138%;
             }
         }
+    }
+}
+
+.box-video {
+    position: relative;
+    display: block;
+
+    img {
+        margin-bottom: 0 !important;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba($black, 0.3);
+        position: absolute;
+        z-index: 2;
+    }
+
+    .button--video {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: rem-calc(-60);
+        margin-top: rem-calc(-60);
+
+        z-index: 3;
+    }
+}
+
+.batteries {
+    border-top: 1px solid #323232;
+    border-bottom: 1px solid #323232;
+    margin-top: rem-calc(70);
+
+    .grid-container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__left {
+        border-right: 1px solid #323232;
+        font-size: rem-calc(19);
+        width: rem-calc(320);
+        padding: rem-calc(60 0 50 0);
+        background: linear-gradient(to right, #323232 1px, transparent 1px);
+        background-size: 32px;
+        flex: 0 0 auto;
+
+        p {
+            margin-bottom: rem-calc(5);
+        }
+
+        .batteries__footer {
+            margin-top: rem-calc(70);
+
+            p {
+                margin-bottom: rem-calc(25);
+            }
+
+            .stat {
+                color: #CCCBCA;
+                font-size: rem-calc(48);
+            }
+        }
+    }
+
+    &__right {
+        overflow: hidden;
+
+
+
     }
 }

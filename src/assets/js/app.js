@@ -20,9 +20,11 @@ import {
     Navigation,
     Pagination,
     Scrollbar,
-    A11y
+    Controller,
+    A11y,
+    EffectFade
   } from "swiper";
-  Swiper.use([Navigation, Pagination, Scrollbar, A11y]);
+  Swiper.use([Navigation, Pagination, Scrollbar, A11y, Controller, EffectFade]);
     
 
 
@@ -32,10 +34,11 @@ $(document).foundation();
 
 const swiper = new Swiper(".swiper--timeline", {
     slidesPerView: "auto",
-    centeredSlides: true,
-    spaceBetween: 30,
+    centeredSlides: false,
+    spaceBetween: 20,
     breakpoints: {
       640: {
+        spaceBetween: 30,
         slidesPerView: "auto",
         centeredSlides: false,
       }
@@ -53,10 +56,11 @@ const swiper = new Swiper(".swiper--timeline", {
 
 const swiperTeam = new Swiper(".swiper--team", {
     slidesPerView: "auto",
-    centeredSlides: true,
-    spaceBetween: 30,
+    centeredSlides: false,
+    spaceBetween: 20,
     breakpoints: {
       640: {
+        spaceBetween: 30,
         slidesPerView: "auto",
         centeredSlides: false,
       }
@@ -70,3 +74,64 @@ const swiperTeam = new Swiper(".swiper--team", {
         clickable: true,
       }
   });
+
+  let swiperBatteriesText = new Swiper(".swiper--batteries-text", {
+    slidesPerView: 1,
+    centeredSlides: true,
+    spaceBetween: 30,
+    effect: 'fade',
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        centeredSlides: false,
+      }
+    },
+    fadeEffect: {
+        crossFade: true
+      },
+  });
+
+  let swiperBatteriesStats = new Swiper(".swiper--batteries-stats", {
+    slidesPerView: 1,
+    centeredSlides: true,
+    spaceBetween: 30,
+    effect: 'fade',
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        centeredSlides: false,
+      }
+    },
+    fadeEffect: {
+        crossFade: true
+      },
+  });
+
+
+
+
+  let swiperBatteries = new Swiper(".swiper--batteries", {
+    slidesPerView: 1,
+    centeredSlides: true,
+    spaceBetween: 30,
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        centeredSlides: false,
+      }
+    },
+    navigation: {
+      nextEl: '.swiper-controls--batteries .swiper-button--next',
+      prevEl: '.swiper-controls--batteries .swiper-button--prev',
+    },
+    pagination: {
+        el: '.swiper-pagination--batteries',
+        clickable: true,
+      },
+    controller: {
+        control: [ swiperBatteriesStats, swiperBatteriesText],
+        by: 'container'
+    },
+  });
+
+

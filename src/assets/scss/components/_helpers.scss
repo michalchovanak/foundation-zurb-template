@@ -1,3 +1,10 @@
+.grid-container{
+    @include breakpoint(medium down) {
+        padding-left: rem-calc(25);
+        padding-right: rem-calc(25);
+    }
+}
+
 .bg{
     background-position: center;
     background-repeat: no-repeat;
@@ -18,6 +25,10 @@
     font-size: clamp(46px, 6.6vw, 96px);
 }
 
+.mb-0{
+    margin-bottom: 0;
+}
+
 .mb-40{
     margin-bottom: rem-calc(20);
     @include breakpoint(medium) {
@@ -29,5 +40,12 @@
     margin-bottom: rem-calc(30);
     @include breakpoint(medium) {
         margin-bottom: rem-calc(60);
+    }
+}
+
+.mb-100{
+    margin-bottom: rem-calc(50);
+    @include breakpoint(medium) {
+        margin-bottom: rem-calc(100);
     }
 }

@@ -10,10 +10,13 @@
     .swiper-slide {
         max-width: 75%;
         transition: background-color $global-transition;
-
-        @include breakpoint(medium) {
+        @include breakpoint(large) {
             max-width: rem-calc(404);
         }
+        @include breakpoint(medium) {
+            max-width: rem-calc(304);
+        }
+        
 
         &.swiper-slide-next {
             background-color: #E8E7E6;
@@ -100,6 +103,16 @@
 .swiper--batteries-text {
     overflow: hidden;
     width: 50vw;
+}
+
+.swiper--batteries-text, .swiper--batteries-stats {
+    .swiper-slide{
+        opacity: 0;
+        transition: opacity $global-transition;
+        &.swiper-slide-active{
+            opacity: 1;
+        }
+    }
 }
 
 .swiper-controls {

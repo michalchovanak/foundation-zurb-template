@@ -1,7 +1,6 @@
 .ino-typography {
     margin: 0 auto;
 
-
     h1,
     h2,
     h3,
@@ -9,19 +8,39 @@
     h5 {
         text-transform: uppercase;
         position: relative;
-        left: rem-calc(-100);
-        margin-bottom: rem-calc(55);
+        margin-bottom: rem-calc(40);
+
+        @include breakpoint(medium) {
+            left: -6vw;
+            margin-bottom: rem-calc(55);
+        }
+
+        @include breakpoint(large) {
+            left: rem-calc(-100);
+            
+        }
     }
 
     h2 {
-        font-size: rem-calc(51);
+        font-size: rem-calc(30);
         line-height: 105%;
+
+        @include breakpoint(medium) {
+            font-size: rem-calc(51);
+
+        }
     }
 
     p {
-        font-size: rem-calc(19);
+        font-size: rem-calc(16);
         line-height: 145%;
-        margin-bottom: rem-calc(50);
+        margin-bottom: rem-calc(40);
+
+        @include breakpoint(medium) {
+            margin-bottom: rem-calc(50);
+            font-size: rem-calc(19);
+
+        }
     }
 
     img {
@@ -29,67 +48,102 @@
     }
 
     .lead {
-        font-size: rem-calc(28);
+        font-size: rem-calc(20);
         line-height: 130%;
+
+        @include breakpoint(medium) {
+            font-size: rem-calc(28);
+        }
+    }
+    br{
+        @include breakpoint(small only) {
+            display: none!important;
+        }
     }
 }
 
 .ino-post__block {
     margin: 0 auto;
-    margin-bottom: rem-calc(55);
     max-width: rem-calc(620);
-   
+    margin-bottom: rem-calc(40);
+
+    @include breakpoint(medium) {
+        margin-bottom: rem-calc(55);
+    }
 
     &.wide {
         max-width: rem-calc(720);
         position: relative;
-        left: rem-calc(-50)
+
+        @include breakpoint(medium) {
+            left: rem-calc(-50);
+
+        }
     }
 }
 
-.ino-stats{
+.ino-stats {
     @extend .menu;
-    li{
-     
+
+    li {
+
         display: flex;
         align-items: center;
         padding: rem-calc(10 0);
         position: relative;
         margin-top: -1px;
-        &:before, &:after{
+
+        &:before,
+        &:after {
             content: '';
             width: 150vw;
             margin-left: -50vw;
             position: absolute;
             top: 0;
             height: 1px;
-            background-color: #656B78;;
+            background-color: #656B78;
+            ;
         }
-        &:after{
+
+        &:after {
             top: auto;
             bottom: 0;
         }
-        &:first-child{
-      
+
+
+    }
+
+    &__stat {
+        font-size: rem-calc(32);
+        min-width: rem-calc(90);
+        font-family: $header-font-family;
+        margin-right: rem-calc(23);
+        text-align: right;
+
+        @include breakpoint(medium) {
+            font-size: rem-calc(68);
+            min-width: rem-calc(200);
+
+        }
+
+        sup {
+            font-size: rem-calc(16);
+            top: rem-calc(-12);
+
+            @include breakpoint(medium) {
+                top: rem-calc(-30);
+                font-size: rem-calc(28);
+
+            }
+
         }
     }
 
-    &__stat{
-   
-        font-size: rem-calc(68);
-        font-family: $header-font-family;
-        margin-right: rem-calc(23);
-        min-width: rem-calc(200);
-        text-align: right;
-        sup{
-            font-size: rem-calc(28);
-            top: rem-calc(-30);
-            
-        }
-    }
-    &__description{
+    &__description {
         margin-left: rem-calc(23);
-        p, .lead{
+
+        p,
+        .lead {
             margin-bottom: 0;
         }
     }

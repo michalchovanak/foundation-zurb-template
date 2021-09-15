@@ -16,8 +16,15 @@
         background-repeat: repeat-x;
 
         @include breakpoint(medium) {
+            height: rem-calc(500);
+            left: 70%;
+            background-size: cover;
+        }
+        
+        @include breakpoint(large) {
             height: rem-calc(700);
             left: 50%;
+            background-size: auto;
         }
     }
 

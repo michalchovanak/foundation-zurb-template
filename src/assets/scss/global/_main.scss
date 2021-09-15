@@ -18,7 +18,7 @@
         position: relative;
         z-index: 2;
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: column wrap;
         min-height: 60vh;
 
         @include breakpoint(medium) {
@@ -40,7 +40,13 @@
 
     &--page {
         .hero__content {
-            min-height: 40vh;
+            min-height: 20vh;
+            @include breakpoint(small only) {
+                padding-bottom: rem-calc(20);
+            }
+            @include breakpoint(large) {
+                min-height: 40vh;
+            }
         }
 
         .headline {
@@ -82,7 +88,6 @@
     .content {
         &.half {
             max-width: clamp(500px, 42vw, 608px);
-
         }
     }
 }
@@ -92,7 +97,10 @@
         padding: rem-calc(25);
 
         @include breakpoint(medium) {
-            padding: clamp(60px, 14vw, 280px) clamp(60px, 8vw, 290px);
+            padding: clamp(60px, 8vw, 290px);
+        }
+        @include breakpoint(large) {
+            padding: clamp(60px, 9vw, 280px) clamp(60px, 8vw, 290px);
         }
 
         &.centered {
@@ -110,8 +118,11 @@
 
     &--sm {
         .divided__block {
-            padding: clamp(30px, 6.25vw, 280px) clamp(30px, 15.5vw, 280px) clamp(30px, 6.25vw, 280px) clamp(30px, 6.25vw, 280px);
-
+            padding: clamp(60px, 8vw, 290px);
+            @include breakpoint(large) {
+                
+                padding: clamp(30px, 6.25vw, 280px) clamp(30px, 15.5vw, 280px) clamp(30px, 6.25vw, 280px) clamp(30px, 6.25vw, 280px);
+            }
             .headline {
                 margin-bottom: rem-calc(35);
             }

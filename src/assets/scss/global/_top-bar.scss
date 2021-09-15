@@ -7,7 +7,7 @@ $top-bar-small-offset: 80px;
     backface-visibility: hidden;
     background: transparent;
     margin: 0 auto;
-    padding: 0 rem-calc(15);
+    padding: 0 rem-calc(25);
     
     position: absolute;
     background: transparent;
@@ -20,7 +20,7 @@ $top-bar-small-offset: 80px;
 
     @include breakpoint(large) {
         height: rem-calc(90);
-        padding-left: 0;
+      
     }
 
     @include breakpoint(medium down) {
@@ -33,12 +33,14 @@ $top-bar-small-offset: 80px;
     }
 
     &__content{
-        max-width: rem-calc(1170);
+        max-width: $global-width;
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
         margin: 0 auto;
         width: 100%;
+        align-items: center;
+        padding: 0 rem-calc(15);
     }
 
     .menu {
@@ -145,7 +147,7 @@ $top-bar-small-offset: 80px;
     height: rem-calc(90)!important;
     background-color: transparent;
 
-    @include breakpoint(small only) {
+    @include breakpoint(medium down) {
         height: $top-bar-height-mobile!important;
     }
     
@@ -191,9 +193,7 @@ $top-bar-small-offset: 80px;
 }
 
 .off-canvas {
-
     margin-bottom: rem-calc(140);
-
     overflow: hidden;
 
     &.is-transition-overlap {
@@ -212,14 +212,7 @@ $top-bar-small-offset: 80px;
             margin: rem-calc(10 0);
         }
 
-        .active>a:not(.button) {
-            background-color: transparent;
-            color: $black;
-
-        }
-
         a:not(.button) {
-
             color: $white;
             outline: none;
             padding: rem-calc(14 0);
@@ -256,6 +249,9 @@ $top-bar-small-offset: 80px;
         top: 15px;
         font-size: rem-calc(35);
         line-height: 22px;
+        &:focus{
+            color: $primary-color;
+        }
     }
 
     .headline {

@@ -157,6 +157,14 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
   medium: (
+    'h1': ('font-size': 80, 'line-height': 100%),
+    'h2': ('font-size': 56, 'line-height': 100%),
+    'h3': ('font-size': 48, 'line-height': 120%),
+    'h4': ('font-size': 25),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 16),
+  ),
+  large: (
     'h1': ('font-size': 87, 'line-height': 100%),
     'h2': ('font-size': 71, 'line-height': 100%),
     'h3': ('font-size': 51, 'line-height': 120%),
